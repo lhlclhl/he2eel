@@ -35,7 +35,7 @@ This repository contains the Pytorch implementation of paper [[1]](#citation)
 
   $ python hel_train.py 
 ### Fine-tuning based on pretrained model
-* Download the [pre-trained model](https://drive.google.com/)
+* Download the [pre-trained model](https://drive.google.com/file/d/1JB_YgHAbl1DUCbZEXn2jenqNRR7WYWJK/view?usp=share_link)
 * Train a model based on the pre-trained model (assumed [pretrain_path] is its path): 
 
   $ python hel_train.py --pretrained [pretrain_path]
