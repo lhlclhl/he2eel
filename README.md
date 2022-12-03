@@ -18,20 +18,25 @@ This repository contains the Pytorch implementation of paper [[1]](#citation)
 * The RL [environment](src/environment.py) can be regarded as the dataset module of supervised learning.
 * The RL [trainer](src/rl.py) realizes the training process of RL.
 
-## Evaluation instruction
+## Instructions
+### Evaluation
 * Download and decompress the [pre-processed data and released model](https://drive.google.com/file/d/13sMC6IaCFpZKdmr-0KhQu-QmAHR77Dhb/view?usp=sharing) in the root directory of the repository .
-* Run evaluation of the released model:
+* Run evaluation script for the released model:
 
   $ python hel_test.py
 * Expected results:
 
-	| model          | micro_f1_sdm       | ... |
+	| model          | micro_f1           | ... |
 	|----------------|--------------------|-----|
 	| rl_model.torch | 0.8756436945327323 | ... |
 
-## Training instruction
+### Training
+* Run the training script: 
+
+  $ python hel_train.py 
+### Fine-tuning based on pretrained model
 * Download the [pre-trained model](https://drive.google.com/)
-* Train a new model based on the pre-trained model (assumed [pretrain_path] is its path): 
+* Train a model based on the pre-trained model (assumed [pretrain_path] is its path): 
 
   $ python hel_train.py --pretrained [pretrain_path]
 
