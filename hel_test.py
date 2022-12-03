@@ -77,7 +77,7 @@ if __name__ == "__main__":
 	if not exists(args.res_dir): os.makedirs(args.res_dir)
 	with open(join(args.res_dir, "%s.%s.txt"%(args.model, args.linking_mode)), "a" if args.append else "w", encoding="utf-8") as fout: 
 		rs = "model\t%s\n"%"\t".join(fields)
-		print(rs, end="")
+		print("\r"+rs, end="")
 		if not args.append:
 			fout.write(rs)
 		model_dir = join("./models", args.model, "checkpoints")
