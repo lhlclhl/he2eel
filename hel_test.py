@@ -16,19 +16,14 @@ from src.rl import *
 
 def load_weights(model, model_path):
 	state_dict = torch.load(model_path)
-	print("strictly loading...", end="")
 	try:
 		model.load_state_dict(state_dict)
-		print("success!")
 		return
-	except Exception: print('fail!')
-	print("unstrictly loading...", end="")
+	except Exception: pass
 	try:
 		model.load_state_dict(state_dict, strict=False)
-		print("success!")
 		return
-	except Exception: print('fail!')
-	print("success!")
+	except Exception: pass
 
 if __name__ == "__main__":
 	parser = ArgumentParser()
@@ -76,8 +71,8 @@ if __name__ == "__main__":
 		"md_macro_f1_sdm", "micro_prec_sdm", "micro_rec_sdm"]
 	if not exists(args.res_dir): os.makedirs(args.res_dir)
 	with open(join(args.res_dir, "%s.%s.txt"%(args.model, args.linking_mode)), "a" if args.append else "w", encoding="utf-8") as fout: 
-		rs = "model\t%s\n"%"\t".join(fields)
-		print("\r"+rs, end="")
+		rs = "model\t%s\n"%"\t".join([f[:-4] for f in fields])
+		print(rs, end="")
 		if not args.append:
 			fout.write(rs)
 		model_dir = join("./models", args.model, "checkpoints")
@@ -96,6 +91,6 @@ if __name__ == "__main__":
 				test_sdm=model.hparams.threshold,
 			)
 			rs = "%s\t%s\n"%(mfn, "\t".join(str(ret[f]) for f in fields))
-			print(rs, end="")
+			print("\r"+rs, end="")
 			fout.write(rs)
 			fout.flush()
