@@ -4,7 +4,7 @@
 
 This repository contains the Pytorch implementation of paper [[1]](#citation)
 
-Here the [link](https://mega.nz/folder/l4RhnIxL#_oYvidq2qyDIw1sT-KeMQA) to **pre-processed data** and the **released model**.
+Here the [link](https://drive.google.com/file/d/13sMC6IaCFpZKdmr-0KhQu-QmAHR77Dhb/view?usp=sharing) to **pre-processed data** and the **released model**.
 
 ## Dependencies
 
