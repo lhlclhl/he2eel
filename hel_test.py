@@ -80,7 +80,7 @@ if __name__ == "__main__":
 		if not args.append:
 			fout.write(rs)
 		model_dir = join("./models", args.model, "checkpoints")
-		print("Testing", args.model)
+		print("-"*100)
 		for mfn in sorted(os.listdir(model_dir), key=lambda t: -os.stat(join(model_dir, t)).st_mtime):
 			load_weights(model, join(model_dir, mfn))
 			model = model.eval()
