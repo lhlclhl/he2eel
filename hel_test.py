@@ -91,6 +91,6 @@ if __name__ == "__main__":
 				test_sdm=model.hparams.threshold,
 			)
 			rs = "%s\t%s\n"%(mfn, "\t".join(str(ret[f]) for f in fields))
-			print("\r"+rs, end="")
+			print("\r"+" "*100+"\r"+rs, end="")
 			fout.write(rs)
 			fout.flush()
