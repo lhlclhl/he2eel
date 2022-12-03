@@ -74,6 +74,7 @@ if __name__ == "__main__":
 
 	fields = ["micro_f1_sdm", "md_micro_f1_sdm", "macro_f1_sdm", 
 		"md_macro_f1_sdm", "micro_prec_sdm", "micro_rec_sdm"]
+	if not exists(args.res_dir): os.makedirs(args.res_dir)
 	with open(join(args.res_dir, "%s.%s.txt"%(args.model, args.linking_mode)), "a" if args.append else "w", encoding="utf-8") as fout: 
 		rs = "model\t%s\n"%"\t".join(fields)
 		print(rs, end="")
@@ -98,4 +99,3 @@ if __name__ == "__main__":
 			print(rs, end="")
 			fout.write(rs)
 			fout.flush()
-		
